@@ -293,8 +293,7 @@ function AppStoreBadge({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
 
   return (
     <Link
-      // TODO: swap in the live App Store URL once the listing is public
-      href="https://apps.apple.com/app/maganji/id0000000000"
+      href="https://apps.apple.com/ke/app/maganji-expense-tracker/id6791455782"
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-flex items-center gap-3 rounded-xl font-semibold bg-black text-white border border-black transition-all duration-300 hover:opacity-85 active:scale-95 dark:bg-white dark:text-black dark:border-white ${sizes[size]}`}
@@ -422,7 +421,7 @@ export default function MaganjiPage() {
                 <span className="brand-underline">breathing room.</span>
               </h1>
               <p className="text-sm md:text-base italic text-foreground/40 mb-5">
-                Fahamu nafasi yako ya kupumua.
+                Usi loose track ya ganji zako
               </p>
               <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/60 leading-relaxed">
                 Maganji is a personal finance app and M-Pesa expense tracker
@@ -444,7 +443,7 @@ export default function MaganjiPage() {
               <div className="phone-frame relative w-[280px] md:w-[340px] lg:w-[380px]">
                 {/* Replace src with your actual screenshot */}
                 <Image
-                  src="/images/maganji/hero_dark.webp"
+                  src="/images/maganji/snapshot.webp"
                   alt="Maganji budgeting app Kenya — breathing room snapshot screen for M-Pesa spending"
                   width={380}
                   height={760}
@@ -672,7 +671,7 @@ export default function MaganjiPage() {
                   >
                     {/* Suggested screen: committed expenses list */}
                     <Image
-                      src="/images/maganji/committed_dark.webp"
+                      src="/images/maganji/committed.webp"
                       alt="Maganji committed expenses tracker — rent, NHIF and loan repayments in Kenya"
                       width={220}
                       height={440}
@@ -684,7 +683,7 @@ export default function MaganjiPage() {
                   <div className="phone-frame w-[190px] md:w-[270px] rounded-[32px] overflow-hidden z-20">
                     {/* Suggested screen: breathing room snapshot */}
                     <Image
-                      src="/images/maganji/analysis_dark.webp"
+                      src="/images/maganji/snapshot.webp"
                       alt="Maganji breathing room snapshot — M-Pesa and Airtel Money expense tracker"
                       width={270}
                       height={540}
@@ -699,7 +698,7 @@ export default function MaganjiPage() {
                   >
                     {/* Suggested screen: variable category breakdown */}
                     <Image
-                      src="/images/maganji/variable_dark.webp"
+                      src="/images/maganji/variable.webp"
                       alt="Maganji variable spending breakdown by category — budgeting app Kenya"
                       width={220}
                       height={440}
@@ -781,8 +780,8 @@ export default function MaganjiPage() {
                   </p>
                   <div className="flex flex-wrap justify-center gap-4">
                     <Link
-                      // TODO: swap in the live App Store URL once the listing is public
-                      href="https://apps.apple.com/app/maganji/id0000000000"
+                      
+                      href="https://apps.apple.com/ke/app/maganji-expense-tracker/id6791455782"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-3 px-7 py-3.5 bg-white dark:bg-black text-black dark:text-white rounded-xl text-base font-bold transition-all duration-300 hover:opacity-85 active:scale-95"

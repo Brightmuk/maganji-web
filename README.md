@@ -24,32 +24,53 @@ Visit http://localhost:3000
 5. **Support email** — currently `support@brimukonlabs.com` in
    `app/footer.tsx` and `app/privacy/page.tsx`; update if different.
 
-## Deploying to maganji.co.ke
+## Deploying to GitHub Pages (maganji.co.ke)
 
-The easiest path is Vercel:
+This project is already configured for a static export (`output: "export"`
+in `next.config.ts`) and includes a GitHub Actions workflow at
+`.github/workflows/deploy.yml` that builds and deploys automatically.
 
-1. Push this project to a GitHub repo.
-2. Import the repo at https://vercel.com/new.
-3. Once deployed, go to your Vercel project → **Settings → Domains**, add
-   `maganji.co.ke` (and `www.maganji.co.ke` if you want it too).
-4. Vercel will show you DNS records (usually an `A` record to `76.76.21.21`
-   for the apex domain, or a `CNAME` for `www`). Add those at your domain
-   registrar (wherever you bought `maganji.co.ke`).
-5. DNS propagation can take anywhere from a few minutes to a few hours.
-   Vercel auto-issues an SSL certificate once it verifies the domain.
+**One-time setup:**
 
-## Project structure
+1. Push this repo to GitHub (it needs to be the repo GitHub Pages will
+   serve from — public repos get Pages for free).
+2. In the repo, go to **Settings → Pages** and set **Source** to
+   **GitHub Actions** (not "Deploy from a branch").
+3. Go to **Settings → Pages → Custom domain**, enter `maganji.co.ke`, and
+   save. (A `public/CNAME` file with `maganji.co.ke` is already in this
+   repo, so GitHub will pick it up automatically too — the Settings field
+   just makes GitHub double-check and offer to enforce HTTPS.)
+4. At your domain registrar, point the DNS for `maganji.co.ke` to GitHub
+   Pages:
+   - **A records** (apex domain) → add all four:
+     `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - Optional **AAAA records** (IPv6) →
+     `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
+   - If you also want `www.maganji.co.ke` to work, add a **CNAME record**
+     for `www` pointing to `<your-github-username>.github.io`.
+5. Push to `main` — the workflow builds the site and deploys it. First
+   deploy can take a few minutes; DNS propagation and SSL cert issuance
+   can take longer (up to a few hours).
 
-```
-app/
-  layout.tsx      → fonts, SEO metadata, JSON-LD structured data
-  page.tsx         → the full marketing page
-  footer.tsx       → site footer (Brimukon Labs branding, links)
-  privacy/page.tsx → privacy policy (draft — needs your review)
-  globals.css      → Tailwind + theme variables (light/dark)
-public/
-  images/maganji/  → app screenshots go here
-```
+**Important:** don't point DNS at both Vercel and GitHub Pages at the same
+time for the same domain — pick one host for `maganji.co.ke`. If you were
+already using the Vercel instructions below, you'll need to remove those
+DNS records first (or use GitHub Pages for `maganji.co.ke` and skip Vercel
+entirely, which is the simpler path if you're going all-in on Pages).
+
+**What "static export" changes:**
+
+- `next/image` optimization is disabled (`images.unoptimized: true`) since
+  GitHub Pages has no image server — images are just served as-is. Fine
+  here since your screenshots are already pre-sized webp files.
+- Everything else in this project (pages, metadata, JSON-LD, sitemap,
+  robots.txt) is plain static HTML/JSON generation, so it all works
+  unchanged.
+- If you ever want to preview the exact static output locally: `npm run
+  build` produces a full static site in `./out` — open `out/index.html`
+  directly or serve the folder with any static file server.
+
+
 
 ## SEO notes
 
