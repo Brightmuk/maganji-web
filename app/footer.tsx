@@ -55,7 +55,7 @@ export default function MaganjiFooter() {
                     href="mailto:support@brimukonlabs.com"
                     className="hover:text-black dark:hover:text-white transition-colors"
                   >
-                    support@brimukonlabs.com
+                    info@brimukon.com
                   </Link>
                 </li>
                 <li>
@@ -91,7 +91,7 @@ export default function MaganjiFooter() {
 
         <div className="mt-14 pt-6 border-t border-black/5 dark:border-white/5 flex flex-col sm:flex-row justify-between gap-3 text-xs text-foreground/40">
           <span>© {new Date().getFullYear()} Brimukon Labs. All rights reserved.</span>
-          <span>Made in Nairobi.</span>
+          <span>.</span>
         </div>
       </div>
     </footer>

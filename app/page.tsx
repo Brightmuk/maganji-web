@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import MaganjiFooter from "./footer";
+import SiteHeader from "./header";
 
 // ─── Scroll-reveal hook ────────────────────────────────────────────────────────
 
@@ -209,10 +210,6 @@ const FAQS = [
     a: "That's exactly what Maganji is. Most personal finance apps are built for Western banking and translated for Kenya afterward. Maganji is built the other way round — around paybill, till number, send money, and how Kenyans actually get paid.",
   },
   {
-    q: "Can Maganji track chama or savings group contributions?",
-    a: "Yes. A chama contribution sent by M-Pesa is read like any other transaction, so you can mark it as committed or give it its own category to track it separately from the rest of your matumizi.",
-  },
-  {
     q: "Does Maganji help with Januworry?",
     a: "Yes — a seasonal Beat Januworry challenge is on the roadmap to help you plan around the December-to-January squeeze before it hits, using your own spending history rather than guesswork.",
   },
@@ -231,11 +228,7 @@ const FAQS = [
   {
     q: "Is Maganji free?",
     a: "Maganji is free to download and use. A premium upgrade unlocking further tools is on the way — pricing details will be announced closer to launch.",
-  },
-  {
-    q: "Is it available on iPhone and Android?",
-    a: "Yes — Maganji is on the App Store and Google Play.",
-  },
+  }
 ];
 
 // ─── Components ────────────────────────────────────────────────────────────────
@@ -394,7 +387,7 @@ export default function MaganjiPage() {
       `}</style>
 
       <div className="maganji-root">
-
+        <SiteHeader />
         {/* ═══════════════════════════════════════════════════════════════
             HERO
         ═══════════════════════════════════════════════════════════════ */}
@@ -426,7 +419,7 @@ export default function MaganjiPage() {
               <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/60 leading-relaxed">
                 Maganji is a personal finance app and M-Pesa expense tracker
                 built for Kenya. It reads your M-Pesa and Airtel Money
-                messages and tells you the one number that matters: what's
+                messages and tells you the one number that matters: what&apos;s
                 actually left to spend — not your balance, not your salary.
                 All without an internet connection.
               </p>

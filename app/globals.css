@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-jakarta);
   --font-display: var(--font-syne);
+  --color-primary: var(--color-primary);
 }
 
 @media (prefers-color-scheme: dark) {
