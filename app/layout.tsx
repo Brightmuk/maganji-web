@@ -15,7 +15,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 const siteUrl = "https://maganji.co.ke";
-const title = "Maganji — Know Your Breathing Room | Budgeting App for Kenya";
+const title = "Maganji — Plan your spending | Budgeting App for Kenya";
 const description =
   "Maganji is a personal finance app and M-Pesa expense tracker built for Kenya. It reads your M-Pesa and Airtel Money messages automatically and shows your breathing room — what's actually left to spend. Free on the App Store and Google Play.";
 
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: "/og-image.png",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Maganji — Know your breathing room",
@@ -63,10 +63,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og-image.png"],
+    images: ["/images/og-image.png"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/images/favicon.ico",
   },
   robots: {
     index: true,
